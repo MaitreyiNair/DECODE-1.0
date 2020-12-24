@@ -1,0 +1,42 @@
+//
+//  main.c
+//  CODEQ2
+//
+//  Created by MAITREYI NAIR on 23/12/20.
+//
+
+#include <stdio.h>
+
+int i, a1, f, g;
+int sum = 0;
+int sum1 = 0;
+
+int rajesh_turmoil(int a,int b)
+{
+    int c = b % a;
+    while(a1<6)
+    {
+        a1 = 1;
+        f = a1 + c;
+        g = f % a;
+        if(g == 1)
+            sum1 = sum1 + 1;
+        a++;
+    }
+    
+    return sum1;
+}
+
+int main() {
+    int no_guards;
+    int fingers;
+    scanf("%d",no_guards);
+    while(i < no_guards)
+    {
+        scanf("%d",fingers);
+        sum = sum + fingers;
+}
+
+   rajesh_turmoil(no_guards,sum);
+    
+}
