@@ -1,4 +1,4 @@
-//
+/
 //  main.c
 //  hhh
 //
@@ -7,27 +7,46 @@
 
 #include <stdio.h>
 
-int n, k;
+int n, k, a;
 int count = 0;
+int count1 = -1;
+
+void moduli(int x)
+{
+   
+    count1++;
+    if(x==0){
+        printf("%d",count1*(count1+1)/2);
+    }
+    else{
+        moduli(x-2-count1);
+         }
+}
 
 void moderate(int u, int v, int w)
 {
-    
-    u = u - (w-1);
-    w = w - 1;
-    count++;
-    
-    while(count>0)
-    {
-    if(u == v)
-    {
-        break;
-    }
-    else
-    {
-      
-       moderate(u,v,w);
-    }
+    while(count<w)
+         {
+         if(u == v)
+         {
+             printf("%d",count);
+             break;
+         }
+        if(v == 0)
+             {
+                 moduli(w);
+                 //int count2 = count1+1;
+                 //int c = count1*(count1+1)/2;
+                 
+                 break;
+             }
+         
+         else
+              {
+                 count++;
+                 moderate(u-w-1,v,w-1);
+              }
+
 }
 }
 int main()
@@ -35,8 +54,7 @@ int main()
     scanf("%d",&n);
     scanf("%d",&k);
     
-    int a = n*(n+1)/2;
-    
+    a = n*(n+1)/2;
     
   if(k==a)
   {
@@ -44,10 +62,6 @@ int main()
   }
  else
  {
-    
-        moderate(a,k,n);
-        printf("%d",count);
-    
+    moderate(a,k,n);
  }
-    
 }
