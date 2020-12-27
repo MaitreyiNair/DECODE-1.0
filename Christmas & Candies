@@ -1,0 +1,22 @@
+//
+//  main.c
+//  hhh
+//
+//  Created by MAITREYI NAIR on 27/12/20.
+//
+
+#include <stdio.h>
+
+int n,a;
+
+int main()
+{
+    scanf("%d",&n);
+    a = n%4;
+    
+    if(a == 3 || a == 0)
+        printf("%d",0);
+    else
+        printf("%d",1);
+    
+}
