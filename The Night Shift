@@ -7,36 +7,72 @@
 
 #include <stdio.h>
 
-int i, a1, f, g;
-int sum = 0;
-int sum1 = 0;
+int rajesh_turmoil(int a,int b);
+
 
 int rajesh_turmoil(int a,int b)
 {
-    int c = b % a;
-    while(a1<6)
+    int a1, sum1, g, a2;
+    int f = 1;
+    int count = 0;
+    a1 = b%a;
+    a2 = b/a;
+    while(f<6)
     {
-        a1 = 1;
-        f = a1 + c;
-        g = f % a;
-        if(g == 1)
-            sum1 = sum1 + 1;
-        a++;
+        if (a2==0)
+        {
+            g = f * 1 + a1;;
+        }
+        else
+        {
+            g = f * a2 + a1;
+            
+        }
+        sum1 = g%a;
+        if (sum1==1)
+        {
+            f++;
+        }
+        else{
+            count++;
+            f++;
+        }
+        
     }
-    
-    return sum1;
+    printf("%d",count);
+    return count;
+
 }
 
-int main() {
+
+int main()
+
+{
+    
     int no_guards;
+    scanf("%d",&no_guards);
+    
     int fingers;
-    scanf("%d",no_guards);
+    int i = 0;
+    int sum = 0;
     while(i < no_guards)
     {
-        scanf("%d",fingers);
+        
+        scanf("%d",&fingers);
         sum = sum + fingers;
-}
+        i++;
+    }
+     
+    int no_guards1 = no_guards + 1;
+    int sum2 = sum;
+    
 
-   rajesh_turmoil(no_guards,sum);
+    
+  rajesh_turmoil(no_guards1,sum2);
+    
+  
     
 }
+
+
+
